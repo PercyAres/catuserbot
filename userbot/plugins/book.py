@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen, urlretrieve
 from uniborg.util import CMD_LIST
 
-@friday.on(CMD_LIST(pattern="book (.*)"))
+@bot.on(admin_cmd(CMD_LIST(pattern="book (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -50,7 +50,7 @@ async def _(event):
                 f.write("\n"+title)
                 f.write("\nBook link:- " + link+"\n\n")
 
-        f.write("By Friday.")
+        f.write("Credits to friday userbot")
         f.close()
         caption="By Friday.\n Get Your Friday From @FRIDAYCHAT"
         
