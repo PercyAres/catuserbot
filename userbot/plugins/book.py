@@ -13,7 +13,7 @@ from uniborg.util import CMD_LIST
 async def gibbooks(book):
     if book.fwd_from:
         return
-    input_str = book.pattern_match.group(1)
+    input_str = book.pattern_match(1)
     lool = 0
     await book.edit("searching for the book...")
     lin = "https://b-ok.cc/s/"
@@ -22,7 +22,7 @@ async def gibbooks(book):
 async def _(event):
     if event.fwd_from:
         return
-    input_str = book.pattern_match.group(1)
+    input_str = book.pattern_match(1)
     lool = 0
     await book.edit("searching for the book...")
     lin = "https://b-ok.cc/s/"
