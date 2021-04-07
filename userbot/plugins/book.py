@@ -5,11 +5,11 @@ import re
 import sys
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen, urlretrieve
-from uniborg.util import friday_on_cmd
-from plugins import CMD_HELP, CMD_LIST
+from uniborg.util import CMD_LIST
+from plugins import CMD_HELP
 from plugins import USERS, SUDO_LIST
 
-@friday.on(admin_cmd(pattern="book (.*)"))
+@friday.on(CMD_LIST(pattern="book (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -67,5 +67,10 @@ CMD_HELP.update(
         "booksdl": "**Books Scraper**\
 \n\n**Syntax : **`.book <book name>`\
 \n**Usage :** Gets Instant Download Link Of Given Book."
+    }
+)
+
+CMD_LIST.update(
+    {.book<query>
     }
 )
