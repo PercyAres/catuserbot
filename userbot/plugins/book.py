@@ -6,8 +6,8 @@ import sys
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen, urlretrieve
 from uniborg.util import CMD_LIST
-from plugins import CMD_HELP
-from plugins import USERS, SUDO_LIST
+from utils import CMD_HELP
+from utils import USERS, SUDO_LIST
 
 @friday.on(CMD_LIST(pattern="book (.*)"))
 async def _(event):
