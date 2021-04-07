@@ -41,7 +41,7 @@ async def _(event):
     else:
 
         for tr in soup.find_all('td'):
- for td in tr.find_all('h3'):
+            for td in tr.find_all('h3'):
                 for ts in td.find_all('a'):
                     title = ts.get_text()
                     lool = lool+1
