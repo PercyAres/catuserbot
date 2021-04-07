@@ -69,8 +69,3 @@ CMD_HELP.update(
 \n**Usage :** Gets Instant Download Link Of Given Book."
     }
 )
-
-CMD_LIST.update(
-    {.book<query>
-    }
-)
