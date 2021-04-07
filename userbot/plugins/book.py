@@ -13,18 +13,18 @@ from uniborg.util import CMD_LIST
 async def gibbooks(book):
     if book.fwd_from:
         return
-    input_str = event.pattern_match.group(1)
+    input_str = book.pattern_match.group(1)
     lool = 0
-    await event.edit("searching for the book...")
+    await book.edit("searching for the book...")
     lin = "https://b-ok.cc/s/"
     text = input_str
     link = lin+text
 async def _(event):
     if event.fwd_from:
         return
-    input_str = event.pattern_match.group(1)
+    input_str = book.pattern_match.group(1)
     lool = 0
-    await event.edit("searching for the book...")
+    await book.edit("searching for the book...")
     lin = "https://b-ok.cc/s/"
     text = input_str
     link = lin+text
@@ -58,7 +58,7 @@ async def _(event):
         
         await borg.send_file(event.chat_id, "book.txt", caption=f"**BOOKS GATHERED SUCCESSFULLY!\n\nBY FRIDAY.**")
         os.remove("book.txt")
-        await event.delete()
+        await book.delete()
         
 
 
