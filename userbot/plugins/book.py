@@ -8,8 +8,8 @@ from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen, urlretrieve
 from uniborg.util import CMD_LIST
 
-@bot.on(admin_cmd(outgoing=True, pattern="alive$"))
-@bot.on(sudo_cmd(pattern="alive$", allow_sudo=True))
+@bot.on(admin_cmd(outgoing=True, pattern="book$"))
+@bot.on(sudo_cmd(pattern="book$", allow_sudo=True))
 async def gibbooks(book):
     if book.fwd_from:
         return
