@@ -19,15 +19,6 @@ async def gibbooks(book):
     lin = "https://b-ok.cc/s/"
     text = input_str
     link = lin+text
-async def _(event):
-    if event.fwd_from:
-        return
-    input_str = book.pattern(1)
-    lool = 0
-    await book.edit("searching for the book...")
-    lin = "https://b-ok.cc/s/"
-    text = input_str
-    link = lin+text
 
     headers = ['User-Agent','Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:74.0) Gecko/20100101 Firefox/74.0']
     page = requests.get(link)
@@ -52,7 +43,7 @@ async def _(event):
                 f.write("\n"+title)
                 f.write("\nBook link:- " + link+"\n\n")
 
-        f.write("Credits to friday userbot")
+        f.write("Yippie!!! I found your books")
         f.close()
         caption="By Friday.\n Get Your Friday From @FRIDAYCHAT"
         
@@ -65,3 +56,4 @@ CMD_HELP.update(
         "You'll get the required book"
     }
 )
+# Credits to Friday userbot (and it's owner @Midhun_xD)
