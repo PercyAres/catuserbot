@@ -8,9 +8,10 @@ from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen, urlretrieve
 from uniborg.util import CMD_LIST
 
-@bot.on(admin_cmd(CMD_LIST(pattern="book (.*)"))
-async def _(event):
-    if event.fwd_from:
+@bot.on(admin_cmd(outgoing=True, pattern="alive$"))
+@bot.on(sudo_cmd(pattern="alive$", allow_sudo=True))
+async def gibbooks(book):
+    if book.fwd_from:
         return
     input_str = event.pattern_match.group(1)
     lool = 0
