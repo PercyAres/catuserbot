@@ -2,6 +2,7 @@
 import requests
 import os
 import re
+import asyncio
 import sys
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen, urlretrieve
