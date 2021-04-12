@@ -27,11 +27,10 @@ async def amireallyalive(alive):
         cat_caption += f"**{EMOJI} Python Version :** `{python_version()}\n`"
         cat_caption += f"**{EMOJI} Uptime :** `{uptime}\n`"
         cat_caption += f"**{EMOJI} Master:** {mention}\n"
+        cat_caption += f"**{EMOJI} Jaccat version:**1.0.0\n" 
         await alive.client.send_file(
             alive.chat_id, CAT_IMG, caption=cat_caption, reply_to=reply_to_id
         )
-        await alive.delete()
-    else:
         await edit_or_reply(
             alive,
             f"**{CUSTOM_ALIVE_TEXT}**\n\n"
@@ -41,6 +40,7 @@ async def amireallyalive(alive):
             f"**{EMOJI} Python Version :** `{python_version()}\n`"
             f"**{EMOJI} Uptime :** `{uptime}\n`"
             f"**{EMOJI} Master:** {mention}\n",
+            f"**{EMOJI} Jaccat version:**1.0.0\n" 
         )
 
 
@@ -56,9 +56,10 @@ async def amireallyalive(alive):
     cat_caption += f"**  -Catuserbot Version :** `{catversion}`\n"
     cat_caption += f"**  -Python Version :** `{python_version()}\n`"
     cat_caption += f"**  -Master:** {mention}\n"
+    cat_caption += f"**{EMOJI} Jaccat version:**1.0.0\n" 
     results = await bot.inline_query(tgbotusername, cat_caption)  # pylint:disable=E0602
     await results[0].click(alive.chat_id, reply_to=reply_to_id, hide_via=True)
-    await alive.delete()
+    await alive.reply()
 
 
 # UniBorg Telegram UseRBot
