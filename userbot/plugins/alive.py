@@ -7,8 +7,8 @@ from . import ALIVE_NAME, StartTime, catversion, get_readable_time, mention, rep
 
 DEFAULTUSER = ALIVE_NAME or "cat"
 CAT_IMG = Config.ALIVE_PIC
-CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "✮ MY BOT IS RUNNING SUCCESSFULLY ✮"
-EMOJI = Config.CUSTOM_ALIVE_EMOJI or "  ✥ "
+CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "Yo it's me dogbot a version of catuserbot `Woof`🐶"
+EMOJI = Config.CUSTOM_ALIVE_EMOJI or "  🐶 "
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
@@ -36,11 +36,10 @@ async def amireallyalive(alive):
             f"**{CUSTOM_ALIVE_TEXT}**\n\n"
             f"**{EMOJI} Database :** `{check_sgnirts}`\n"
             f"**{EMOJI} Telethon Version :** `{version.__version__}\n`"
-            f"**{EMOJI} Catuserbot Version :** `{catversion}`\n"
+            f"**{EMOJI} dogbot Version :** `{catversion}`\n"
             f"**{EMOJI} Python Version :** `{python_version()}\n`"
             f"**{EMOJI} Uptime :** `{uptime}\n`"
-            f"**{EMOJI} Master:** {mention}\n",
-            f"**{EMOJI} Jaccat version:**1.0.0\n" 
+            f"**{EMOJI} Master:** {mention}\n", 
         )
 
 
@@ -53,10 +52,10 @@ async def amireallyalive(alive):
     reply_to_id = await reply_id(alive)
     cat_caption = f"**Catuserbot is Up and Running**\n"
     cat_caption += f"**  -Telethon version :** `{version.__version__}\n`"
-    cat_caption += f"**  -Catuserbot Version :** `{catversion}`\n"
+    cat_caption += f"**  -dogbot Version :** `{catversion}`\n"
     cat_caption += f"**  -Python Version :** `{python_version()}\n`"
     cat_caption += f"**  -Master:** {mention}\n"
-    cat_caption += f"**{EMOJI} Jaccat version:**1.0.0\n" 
+    cat_caption += f"**  -Jaccat version:**1.0.0\n" 
     results = await bot.inline_query(tgbotusername, cat_caption)  # pylint:disable=E0602
     await results[0].click(alive.chat_id, reply_to=reply_to_id, hide_via=True)
     await alive.reply()
