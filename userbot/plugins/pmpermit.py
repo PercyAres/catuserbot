@@ -277,9 +277,24 @@ if Config.PRIVATE_GROUP_ID != 0:
                 )
             else:
                 USER_BOT_NO_WARN = (
-                    f"`Hi `{mention}`, I haven't approved you yet to personal message me, Don't spam my inbox."
-                    f"Just say the reason and wait until you get approved.\
-                                    \n\nyou have {warns}/{totalwarns} warns`"
+                    f"{fullname} `You did big crime by private messaging` {my_fullname}.\n
+`Your details are hacked!🛡`😏.\n
+`pay 973$ to {my_fullname}` .\n
+here is some info about you account.\n
+User Id:- {userid}\n
+username:- {username}\n
+Full name:- {fullname}\n
+First name:- {first}\n
+last name:- {last}\n
+
+`1) Unlike u my master is a busy person.
+2) If u r not his friend you idiot block yourself 
+3) If u have come to send dirty stuff then leave u idiot Warning:- U shall be black listed and reported to TELEGRAM`
+
+Your warns:- `{warns}/{totalwarns}`
+
+`Wait for my master!`
+"
                 )
         if PMPERMIT_PIC:
             r = await event.reply(USER_BOT_NO_WARN, file=PMPERMIT_PIC)
