@@ -56,7 +56,7 @@ async def amireallyalive(alive):
     cat_caption += f"**  -dogbot Version :** `{catversion}`\n"
     cat_caption += f"**  -Python Version :** `{python_version()}\n`"
     cat_caption += f"**  -Master:** {mention}\n"
-    cat_caption += f"**  -Device:** Dell Inspiron (os system - windows)\n 
+    cat_caption += f"**  -Device:** Dell Inspiron (os system - windows)\n"
     results = await bot.inline_query(tgbotusername, cat_caption)  # pylint:disable=E0602
     await results[0].click(alive.chat_id, reply_to=reply_to_id, hide_via=True)
     await alive.reply()
